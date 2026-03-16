@@ -4,7 +4,7 @@
 A timesheet application for tracking employee work hours against projects. Spring Boot REST API backend with a React frontend.
 
 ## Tech Stack
-- **Backend:** Java 21, Spring Boot 3, Spring Data JPA, H2 (dev) / PostgreSQL (prod), Maven
+- **Backend:** , Spring Boot 3, Spring Data JPA, H2 (dev) / PostgreSQL (prod), Maven
 - **Frontend:** React 18 with TypeScript, Vite, React Router, Axios
 - **Testing:** JUnit 5 + Spring Boot Test (backend), Vitest + React Testing Library (frontend)
 
@@ -15,7 +15,7 @@ ralph-timesheet/
   ui/           # React frontend (Vite + TypeScript)
   Agents.md     # This file - project instructions
   PROMPT.md     # Ralph loop prompt
-  USER_STORIES.md  # Ordered user stories with progress tracking
+  github issues  # Issues to implement
 ```
 
 ## Build & Run Commands
@@ -56,15 +56,3 @@ cd ui && npm run build                   # Production build
 - Commit after completing each user story
 - Use conventional commit messages: `feat:`, `fix:`, `chore:`, `test:`
 - Keep commits atomic — one story per commit
-
-## Data Model
-
-### Core Entities
-- **Employee** — id, firstName, lastName, email, department
-- **Project** — id, name, code, description, active
-- **TimeEntry** — id, employee (FK), project (FK), date, hours, description
-
-### Constraints
-- Hours per entry: 0.25 to 24 (quarter-hour increments)
-- An employee cannot log more than 24 hours in a single day across all entries
-- Date cannot be in the future
