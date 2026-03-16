@@ -10,8 +10,9 @@ You are iteratively building a timesheet application. Read Agents.md for project
    - Backend: `cd api && ./mvnw test`
    - Frontend: `cd ui && npm test`
    - If tests fail, fix the issues before proceeding.
-4. **Close the issue when done ** 
-5. **Commit your work** with a conventional commit message referencing the issue Number/ID 
+4. **Commit your work** with a conventional commit message referencing the issue Number/ID 
+5. **Push commits**  back to the repository
+6. ** Close the issue** 
 
 
 ## Rules
