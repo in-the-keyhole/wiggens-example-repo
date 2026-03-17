@@ -11,7 +11,7 @@ You are iteratively building a timesheet application. Read Agents.md for project
    - Frontend: `cd ui && npm test`
    - If tests fail, fix the issues before proceeding.
 4. **Commit your work** with a conventional commit message referencing the issue Number/ID 
-5. **Push commits**  back to the repository
+5. **Run Git Push **  Push commits to repository back to the repository
 6. ** Close the issue** 
 
 

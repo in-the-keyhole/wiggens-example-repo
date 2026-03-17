@@ -20,6 +20,9 @@ ralph-timesheet/
 
 ## Build & Run Commands
 
+## to push Commits 
+git push
+
 ### Backend (api/)
 ```bash
 cd api && ./mvnw spring-boot:run        # Run the API (port 8080)
