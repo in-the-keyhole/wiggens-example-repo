@@ -21,6 +21,7 @@ ralph-timesheet/
 ## Build & Run Commands
 
 ## to push Commits 
+git commit
 git push
 
 ### Backend (api/)
@@ -56,6 +57,8 @@ cd ui && npm run build                   # Production build
 - Use MUI
 
 ### Git
-- Commit after completing each user story
+- Commit after completing each issue 
 - Use conventional commit messages: `feat:`, `fix:`, `chore:`, `test:`
 - Keep commits atomic — one story per commit
+- When done do a git push using the MCP server
+- Mark the issue closed using the MCP server
