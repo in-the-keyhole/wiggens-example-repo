@@ -11,8 +11,8 @@ You are iteratively building a timesheet application. Read Agents.md for project
    - Frontend: `cd ui && npm test`
    - If tests fail, fix the issues before proceeding.
 4. **Commit your work** with a conventional commit message referencing the issue Number/ID 
-5. **Run Git Push using the configured MCP server **  Push commits to repository back to the repository
-6. ** Close the issue using the MCP server ** 
+5. ** After commit issue a PR Pull request ** Use the configured github MCP server
+6. ** Close the issue using the github MCP server ** 
 
 
 ## Rules

@@ -60,5 +60,5 @@ cd ui && npm run build                   # Production build
 - Commit after completing each issue 
 - Use conventional commit messages: `feat:`, `fix:`, `chore:`, `test:`
 - Keep commits atomic — one story per commit
-- When done do a git commit and open a PR 
+- When done do a git commit and open a PR PUll Request
 - Mark the github issue closed using the MCP server
