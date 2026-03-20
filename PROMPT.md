@@ -1,6 +1,6 @@
-# Ralph Loop Prompt
+# Implementation Instructions
 
-You are iteratively building a timesheet application. Read Agents.md for project conventions and USER_STORIES.md for the task list.
+You are iteratively building a timesheet application. Read open github issues for implementation requirments. Follow the instructions in the document and the Agents.md for architecture and processes.
 
 ## Instructions
 
