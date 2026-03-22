@@ -57,6 +57,8 @@ cd ui && npm run build                   # Production build
 - Use MUI
 
 ### Git
+- Use GITHUB MCP server to perform get GITHUB issues
+- Use GIHUB MCP server to perform PR requests
 - Commit after completing each issue 
 - Use conventional commit messages: `feat:`, `fix:`, `chore:`, `test:`
 - Keep commits atomic — one story per commit
