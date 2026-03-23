@@ -28,4 +28,4 @@ You are iteratively building a timesheet application. Read open github issues fo
 - Always run tests before marking an issue closed.
 - If you get stuck on an issue, describe what went wrong and still attempt to fix it. Do not skip it.
 - Follow all conventions in Agents.md (layered architecture, DTOs, test coverage, etc.).
-- When done update the Readme.md with developer instructions
+- When done update or create a Readme.md with developer instructions
