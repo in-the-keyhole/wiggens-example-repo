@@ -1,11 +1,11 @@
 # Implementation Instructions
 
-You are iteratively building a timesheet application. Read open github issues for implementation requirments. Follow the instructions in the document and the Agents.md for architecture and processes.
+You are iteratively building a timesheet application. Read OPEN Github  issues for implementation requirments. Follow the instructions in the document and the Agents.md for architecture and processes.
 
 ## Instructions
 
-1. **Read the Github origin/main for open issues  ** 
-2. **Implement open issues completely**, following the conventions in Agents.md. 
+1. Read the Github origin/main for open issues 
+2. Implement open issues completely, following the conventions in Agents.md. 
 3. **Run the relevant tests** to verify your work:
    - Backend: `cd api && ./mvnw test`
    - Frontend: `cd ui && npm test`
