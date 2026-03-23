@@ -4,10 +4,17 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  server: {
+    proxy: {
+      '/codex-example': {
+        target: 'http://localhost:8080',
+        changeOrigin: true
+      }
+    }
+  },
   test: {
     environment: 'jsdom',
     setupFiles: [],
     globals: true
   }
 })
-
