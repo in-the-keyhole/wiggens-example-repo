@@ -10,7 +10,16 @@ You are iteratively building a timesheet application. Read open github issues fo
    - Backend: `cd api && ./mvnw test`
    - Frontend: `cd ui && npm test`
    - If tests fail, fix the issues before proceeding.
-4. **Commit your work** with a conventional commit message referencing the issue Number/ID 
+4. Follow the Github Instructions show below.
+
+
+### GitHub instructions
+- Use issues to implement from GITHUB
+- Commit after completing each issue 
+- Use conventional commit messages: `feat:`, `fix:`, `chore:`, `test:`
+- Keep commits atomic — one story per commit
+- Push commits to origin/master
+- Mark the github issue closed
 
 
 ## Rules

@@ -56,10 +56,3 @@ cd ui && npm run build                   # Production build
 - Keep business logic out of components — use custom hooks
 - Use MUI
 
-### Git
-- Use issues to implement from GITHUB
-- Commit after completing each issue 
-- Use conventional commit messages: `feat:`, `fix:`, `chore:`, `test:`
-- Keep commits atomic — one story per commit
-- When done stage and commit changes and push to origin/master
-- Mark the github issue closed
