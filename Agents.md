@@ -1,4 +1,4 @@
-# Ralph Timesheet
+# Timesheet Sytem
 
 ## Project Overview
 A timesheet application for tracking employee work hours against projects. Spring Boot REST API backend with a React frontend.
@@ -57,10 +57,9 @@ cd ui && npm run build                   # Production build
 - Use MUI
 
 ### Git
-- Use GITHUB MCP server to perform get GITHUB issues
-- Use GIHUB MCP server to perform PR requests
+- Use issues to implement from GITHUB
 - Commit after completing each issue 
 - Use conventional commit messages: `feat:`, `fix:`, `chore:`, `test:`
 - Keep commits atomic — one story per commit
-- When done do a git commit and open a PR PUll Request
-- Mark the github issue closed using the MCP server
+- When done stage and commit changes and push to origin/master
+- Mark the github issue closed

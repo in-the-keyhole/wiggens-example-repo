@@ -4,15 +4,13 @@ You are iteratively building a timesheet application. Read open github issues fo
 
 ## Instructions
 
-1. **Read the repositories open issues ** 
+1. **Read the Github repositories open issues ** 
 2. **Implement that story completely**, following the conventions in Agents.md. 
 3. **Run the relevant tests** to verify your work:
    - Backend: `cd api && ./mvnw test`
    - Frontend: `cd ui && npm test`
    - If tests fail, fix the issues before proceeding.
 4. **Commit your work** with a conventional commit message referencing the issue Number/ID 
-5. ** After commit issue a PR Pull request ** Use the configured github MCP server
-6. ** Close the issue using the github MCP server ** 
 
 
 ## Rules
