@@ -4,8 +4,8 @@ You are iteratively building a timesheet application. Read open github issues fo
 
 ## Instructions
 
-1. **Read the Github repositories open issues ** 
-2. **Implement that story completely**, following the conventions in Agents.md. 
+1. **Read the Github origin/main for open issues  ** 
+2. **Implement open issues completely**, following the conventions in Agents.md. 
 3. **Run the relevant tests** to verify your work:
    - Backend: `cd api && ./mvnw test`
    - Frontend: `cd ui && npm test`
