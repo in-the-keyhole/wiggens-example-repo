@@ -10,6 +10,7 @@ You are iteratively building a timesheet application. Read OPEN Github  issues f
    - Backend: `cd api && ./mvnw test`
    - Frontend: `cd ui && npm test`
    - If tests fail, fix the issues before proceeding.
+4. Create or Update the Readme.md file for developer instructions   
 4. Follow the Github Instructions show below.
 
 
