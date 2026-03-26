@@ -15,12 +15,12 @@ You are iteratively building a timesheet application. Read OPEN Github  issues f
 
 
 ### GitHub instructions
-- Use issues to implement from GITHUB
+- Use Github issues to implement from GITHUB obtain issues using MCP server. Use the Persnonnal Access Token (PAT) approach in the URL. The PAT is avialble in the GITHUB_TOKEN environment variable
 - Commit after completing each issue 
 - Use conventional commit messages: `feat:`, `fix:`, `chore:`, `test:`
 - Keep commits atomic — one story per commit
 - Push commits to origin/master
-- Mark the github issue closed
+- Mark the github issue closed. Use MCP with the PAT in the URL. The PAT is available in the GITHUB_TOKEN environment variable
 
 
 ## Rules
