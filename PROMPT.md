@@ -19,7 +19,7 @@ You are iteratively building a timesheet application. Read OPEN Github  issues f
 - Commit after completing each issue 
 - Use conventional commit messages: `feat:`, `fix:`, `chore:`, `test:`
 - Keep commits atomic — one story per commit
-- Push commits to origin/master
+- Push commits to origin/master Use MCP with the PAT in the URL. The PAT is available in the GITHUB_TOKEN environment
 - Mark the github issue closed. Use MCP with the PAT in the URL. The PAT is available in the GITHUB_TOKEN environment variable
 
 
