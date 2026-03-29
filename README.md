@@ -72,5 +72,4 @@ Follow `Agents.md`:
 
 ## Notes
 
-- This is a minimal, working slice to satisfy the open issue. It is structured to be extended (e.g., auth, roles, real PostgreSQL, richer dashboard KPIs).
-
+- This is a minimal, working slice to satisfy the open issue. It is structured to be extended (e.g., auth, roles, real PostgreSQL, richer dashboard KPIs). Further refinements and test coverage can be added iteratively.
