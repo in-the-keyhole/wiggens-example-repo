@@ -35,9 +35,13 @@ Monorepo for a simple employee timesheet system.
 Dev server proxies API calls: Vite is configured to proxy `'/codex-example/api/v1'` to `http://localhost:8080` during development. Run the backend on port 8080 for the UI to work locally.
 
 The UI provides:
-- Landing page with employee selector and weekly entry fields
-- Add Employee prompt (name + email)
-- Weekly summary loader for the current week
+- Dashboard landing page with:
+  - Employee count
+  - Total hours this week
+  - Total hours to date
+  - Quick actions to Add Timesheet, Add Employee, and open Reporting Center
+- Add Timesheet view with employee selector and weekly entry fields
+- Reporting Center with loadable weekly summaries by date range (current week by default)
 
 ## Git & GitHub
 - Conventional commits: `feat:`, `fix:`, `chore:`, `test:`
