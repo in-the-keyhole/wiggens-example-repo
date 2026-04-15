@@ -20,7 +20,12 @@ export default function App() {
   const weekStart = useMemo(() => startOfWeek(), [])
 
   useEffect(() => {
-    listEmployees().then(setEmployees).catch(() => setEmployees([]))
+    listEmployees()
+      .then((data) => {
+        // Guard against non-array responses (e.g., dev server HTML fallback)
+        setEmployees(Array.isArray(data) ? data : [])
+      })
+      .catch(() => setEmployees([]))
   }, [])
 
   async function handleCreateEmployee() {
@@ -96,4 +101,3 @@ export default function App() {
     </Box>
   )
 }
-
