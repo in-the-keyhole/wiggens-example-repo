@@ -93,5 +93,11 @@ public class TimesheetService {
                         .reduce(BigDecimal.ZERO, BigDecimal::add))
                 .build();
     }
-}
 
+    @Transactional(readOnly = true)
+    public List<TimesheetDtos.TimesheetResponse> listByEmployee(Long employeeId) {
+        return timesheetRepository.findByEmployeeId(employeeId).stream()
+                .map(this::toResponse)
+                .collect(Collectors.toList());
+    }
+}

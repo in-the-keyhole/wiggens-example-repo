@@ -25,6 +25,7 @@ Monorepo for a simple employee timesheet system.
 - `POST /timesheets` Create/update week `{ employeeId, weekStart, entries[] }`
 - `PUT /timesheets/{id}` Update entries
 - `GET /reports/summary?start=YYYY-MM-DD&end=YYYY-MM-DD` Weekly totals
+- `GET /employees/{id}/timesheets` Browse timesheets for an employee
 
 ## Frontend (ui/)
 - Install: `cd ui && npm install`
@@ -39,8 +40,9 @@ The UI provides:
   - Employee count
   - Total hours this week
   - Total hours to date
-  - Quick actions to Add Timesheet, Add Employee, and open Reporting Center
+  - Quick actions to Add Timesheet, Add Employee, Browse Timesheets, and open Reporting Center
 - Add Timesheet view with employee selector and weekly entry fields
+- Browse Timesheets view with employee selector and list of weekly timesheets
 - Reporting Center with loadable weekly summaries by date range (current week by default)
 
 ## Git & GitHub

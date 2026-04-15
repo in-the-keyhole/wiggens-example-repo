@@ -32,3 +32,7 @@ export async function getSummary(start: string, end: string) {
   return data
 }
 
+export async function listTimesheetsByEmployee(employeeId: number) {
+  const { data } = await api.get<TimesheetResponse[]>(`/employees/${employeeId}/timesheets`)
+  return data
+}

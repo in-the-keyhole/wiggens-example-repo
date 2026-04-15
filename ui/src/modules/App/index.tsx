@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Box, Button, Card, CardContent, Grid, MenuItem, Select, Tab, Tabs, TextField, Typography } from '@mui/material'
 import dayjs from 'dayjs'
-import { createEmployee, createTimesheet, EntryDto, getSummary, listEmployees, type Employee } from '../../codex-example/api/client'
+import { createEmployee, createTimesheet, EntryDto, getSummary, listEmployees, listTimesheetsByEmployee, type Employee, type TimesheetResponse } from '../../codex-example/api/client'
 
 function startOfWeek(date = new Date()) {
   const d = dayjs(date)
@@ -16,9 +16,10 @@ export default function App() {
   const [project, setProject] = useState('Project A')
   const [hoursByDay, setHoursByDay] = useState<Record<string, number>>({ MONDAY: 0, TUESDAY: 0, WEDNESDAY: 0, THURSDAY: 0, FRIDAY: 0 })
   const [summary, setSummary] = useState<any[]>([])
-  const [tab, setTab] = useState<'dashboard' | 'add' | 'reports'>('dashboard')
+  const [tab, setTab] = useState<'dashboard' | 'add' | 'browse' | 'reports'>('dashboard')
   const [weeklyTotal, setWeeklyTotal] = useState<number>(0)
   const [toDateTotal, setToDateTotal] = useState<number>(0)
+  const [browseTimesheets, setBrowseTimesheets] = useState<TimesheetResponse[]>([])
 
   const weekStart = useMemo(() => startOfWeek(), [])
 
@@ -69,6 +70,12 @@ export default function App() {
     setSummary(data)
   }
 
+  async function handleBrowseLoad() {
+    if (!selectedEmployee) return
+    const rows = await listTimesheetsByEmployee(Number(selectedEmployee))
+    setBrowseTimesheets(rows)
+  }
+
   return (
     <Box mt={4}>
       <Typography variant="h4" gutterBottom>Ralph Timesheet</Typography>
@@ -76,6 +83,7 @@ export default function App() {
       <Tabs value={tab} onChange={(_, v) => setTab(v)} sx={{ mb: 2 }}>
         <Tab label="Dashboard" value="dashboard" />
         <Tab label="Add Timesheet" value="add" />
+        <Tab label="Browse Timesheets" value="browse" />
         <Tab label="Reporting Center" value="reports" />
       </Tabs>
 
@@ -119,6 +127,9 @@ export default function App() {
                 </Grid>
                 <Grid item xs={12} md={4}>
                   <Button fullWidth variant="outlined" onClick={() => setTab('reports')}>Open Reporting Center</Button>
+                </Grid>
+                <Grid item xs={12} md={4}>
+                  <Button fullWidth variant="outlined" onClick={() => setTab('browse')}>Browse Timesheets</Button>
                 </Grid>
               </Grid>
             </CardContent>
@@ -167,6 +178,32 @@ export default function App() {
             {summary.map((s) => (
               <Box key={`${s.employeeId}-${s.weekStart}`} sx={{ mb: 1 }}>
                 <Typography>{s.employeeName} — {s.weekStart}: {s.totalHours}h</Typography>
+              </Box>
+            ))}
+          </CardContent>
+        </Card>
+      )}
+
+      {tab === 'browse' && (
+        <Card>
+          <CardContent>
+            <Typography variant="h6">Browse Timesheets</Typography>
+            <Grid container spacing={2} alignItems="center" sx={{ mt: 1, mb: 2 }}>
+              <Grid item xs={12} md={6}>
+                <Select fullWidth displayEmpty value={selectedEmployee} onChange={(e) => setSelectedEmployee(e.target.value as any)}>
+                  <MenuItem value="" disabled>Select employee</MenuItem>
+                  {employees.map((e) => (
+                    <MenuItem key={e.id} value={e.id}>{e.name} ({e.email})</MenuItem>
+                  ))}
+                </Select>
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <Button fullWidth variant="contained" onClick={handleBrowseLoad} disabled={!selectedEmployee}>Load Timesheets</Button>
+              </Grid>
+            </Grid>
+            {browseTimesheets.map((t) => (
+              <Box key={`${t.id}-${t.weekStart}`} sx={{ mb: 1 }}>
+                <Typography>Week of {t.weekStart} — Total: {t.totalHours}h</Typography>
               </Box>
             ))}
           </CardContent>

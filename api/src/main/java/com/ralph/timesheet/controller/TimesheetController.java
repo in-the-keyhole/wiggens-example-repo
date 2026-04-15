@@ -35,5 +35,9 @@ public class TimesheetController {
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate end) {
         return timesheetService.summary(start, end);
     }
-}
 
+    @GetMapping("/employees/{employeeId}/timesheets")
+    public List<TimesheetDtos.TimesheetResponse> listByEmployee(@PathVariable Long employeeId) {
+        return timesheetService.listByEmployee(employeeId);
+    }
+}

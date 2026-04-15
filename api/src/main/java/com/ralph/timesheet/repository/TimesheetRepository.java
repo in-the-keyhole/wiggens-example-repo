@@ -11,5 +11,5 @@ import java.util.Optional;
 public interface TimesheetRepository extends JpaRepository<Timesheet, Long> {
     Optional<Timesheet> findByEmployeeAndWeekStart(Employee employee, LocalDate weekStart);
     List<Timesheet> findByWeekStartBetween(LocalDate start, LocalDate end);
+    List<Timesheet> findByEmployeeId(Long employeeId);
 }
-

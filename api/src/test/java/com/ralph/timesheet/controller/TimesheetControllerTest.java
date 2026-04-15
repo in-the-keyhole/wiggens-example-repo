@@ -65,6 +65,12 @@ class TimesheetControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].employeeId").value(empId))
                 .andExpect(jsonPath("$[0].totalHours").value(16));
+
+        // Browse by employee should return created timesheet
+        mockMvc.perform(get("/codex-example/api/v1/employees/{id}/timesheets", empId))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$[0].employeeId").value(empId))
+                .andExpect(jsonPath("$[0].weekStart").value(start.toString()))
+                .andExpect(jsonPath("$[0].totalHours").value(16));
     }
 }
-
