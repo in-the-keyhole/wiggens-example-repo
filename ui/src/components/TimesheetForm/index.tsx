@@ -8,11 +8,12 @@ dayjs.extend(isoWeek)
 
 type Props = {
   onSubmit: (dto: TimesheetDTO) => Promise<void> | void
+  initialEmployeeId?: number
 }
 
-export default function TimesheetForm({ onSubmit }: Props) {
+export default function TimesheetForm({ onSubmit, initialEmployeeId }: Props) {
   const monday = dayjs().isoWeekday(1).format('YYYY-MM-DD')
-  const [employeeId, setEmployeeId] = useState<number>(1)
+  const [employeeId, setEmployeeId] = useState<number>(initialEmployeeId ?? 1)
   const [weekStart, setWeekStart] = useState<string>(monday)
   const [hours, setHours] = useState<Record<string, number>>({
     mon: 8, tue: 8, wed: 8, thu: 8, fri: 8, sat: 0, sun: 0
@@ -59,4 +60,3 @@ export default function TimesheetForm({ onSubmit }: Props) {
     </Box>
   )
 }
-

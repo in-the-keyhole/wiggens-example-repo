@@ -7,7 +7,16 @@ import Landing from './pages/Landing'
 import TimesheetPage from './pages/Timesheet'
 import ReportPage from './pages/Report'
 
-const theme = createTheme()
+const theme = createTheme({
+  palette: {
+    mode: 'light',
+    primary: { main: '#7C4DFF' },
+    secondary: { main: '#00BCD4' },
+    background: { default: '#fafafa' }
+  },
+  shape: { borderRadius: 10 },
+  typography: { fontFamily: 'Inter, Roboto, Helvetica, Arial, sans-serif' }
+})
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -25,4 +34,3 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     </ThemeProvider>
   </React.StrictMode>
 )
-

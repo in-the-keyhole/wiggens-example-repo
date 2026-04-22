@@ -1,9 +1,15 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Alert, Paper, Table, TableBody, TableCell, TableHead, TableRow, TextField, Typography } from '@mui/material'
 import api, { TimesheetDTO } from '../../api/client'
+import { useLocation } from 'react-router-dom'
 
 export default function ReportPage() {
-  const [employeeId, setEmployeeId] = useState<number>(1)
+  const location = useLocation()
+  const employeeFromQuery = useMemo(() => {
+    const p = new URLSearchParams(location.search).get('employeeId')
+    return p ? Number(p) : 1
+  }, [location.search])
+  const [employeeId, setEmployeeId] = useState<number>(employeeFromQuery)
   const [rows, setRows] = useState<TimesheetDTO[]>([])
   const [error, setError] = useState<string | null>(null)
 
@@ -46,4 +52,3 @@ export default function ReportPage() {
     </Paper>
   )
 }
-
