@@ -4,7 +4,7 @@ You are iteratively building a timesheet application. Read and iterate over the 
 
 ## Repository URL
 
-repository url = <** Codex CLI please replace this with the specifiec github URL **>
+repository url = https://github.com/in-the-keyhole/wiggens-example-repo
 
 
 ## Instructions
