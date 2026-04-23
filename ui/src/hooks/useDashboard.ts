@@ -30,8 +30,19 @@ export function useDashboard() {
     setLoading(true)
     setError(null)
     try {
-      const { data: employees } = await api.get<EmployeeDTO[]>('/employees')
+      const resp = await api.get<any>('/employees')
+      // Support both array and Spring Data Page<{ content: EmployeeDTO[] }>
+      const employees: EmployeeDTO[] = Array.isArray(resp.data)
+        ? resp.data
+        : (resp.data && Array.isArray(resp.data.content))
+          ? resp.data.content as EmployeeDTO[]
+          : []
       const employeeCount = employees.length
+      if (!Array.isArray(resp.data) && !(resp.data && Array.isArray(resp.data.content))) {
+        // Surface a helpful error but keep UI functional
+        console.warn('Unexpected employees payload; expected array, got', typeof resp.data)
+        setError('Unexpected response while loading employees')
+      }
       const monday = dayjs().isoWeekday(1).format('YYYY-MM-DD')
 
       // For each employee, get this week's timesheet and all timesheets
@@ -67,4 +78,3 @@ export function useDashboard() {
 
   return { ...stats, loading, error, reload: load }
 }
-
