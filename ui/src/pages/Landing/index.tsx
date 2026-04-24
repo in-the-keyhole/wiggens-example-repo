@@ -59,9 +59,11 @@ export default function Landing() {
                 displayEmpty
                 value={selectedEmployee}
                 onChange={(e: SelectChangeEvent) => setSelectedEmployee(e.target.value)}
-                renderValue={(v) => v ? employees.find(e => String(e.id) === v)?.name : 'Select Employee'}
+                renderValue={(v) => v && Array.isArray(employees)
+                  ? employees.find(e => String(e.id) === v)?.name
+                  : 'Select Employee'}
               >
-                {employees.map(e => (
+                {Array.isArray(employees) && employees.map(e => (
                   <MenuItem key={e.id} value={String(e.id)}>{e.name} (#{e.id})</MenuItem>
                 ))}
               </Select>

@@ -1,6 +1,6 @@
 # Implementation Instructions
 
-You are iteratively building a timesheet application. Read and iterate over the OPEN Github  issues for implementation requirments. Follow the instructions in the document and the Agents.md for architecture and processes.
+You are iteratively building a timesheet application. Read and iterate over all the OPEN Github issues for implementation requirments. Follow the instructions in the document and the Agents.md for architecture and processes.
 
 ## Repository URL
 
@@ -10,8 +10,8 @@ repository url = https://github.com/in-the-keyhole/wiggens-example-repo
 ## Instructions
 
 1. Read the Github origin/main for all open issues with the issue title having the "wiggens:" prefix in the title name. Ignore issues that do not have this prefix in the title. 
-2. Iterate over each issue and perform the description of the issue.
-3. Implement open issues completely, following the conventions in Agents.md. 
+2. Iterate over all the issues identified for wiggens and perform the description of the issue.
+3. Implement all open issues completely, following the conventions in Agents.md. Commit work after each issue.
 4. **Run the relevant tests** to verify your work:
    - Backend: `cd api && ./mvnw test`
    - Frontend: `cd ui && npm test`

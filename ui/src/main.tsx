@@ -6,6 +6,7 @@ import App from './App'
 import Landing from './pages/Landing'
 import TimesheetPage from './pages/Timesheet'
 import ReportPage from './pages/Report'
+import EmployeesPage from './pages/Employees'
 
 const theme = createTheme({
   palette: {
@@ -28,6 +29,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
             <Route index element={<Landing />} />
             <Route path="timesheet" element={<TimesheetPage />} />
             <Route path="report" element={<ReportPage />} />
+            <Route path="employees" element={<EmployeesPage />} />
           </Route>
         </Routes>
       </BrowserRouter>

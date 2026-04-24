@@ -40,9 +40,14 @@ Frontend (ui/)
 - Production build: `cd ui && npm run build`
 
 Frontend Notes
-- Routes: `/` (Landing), `/timesheet` (enter weekly hours), `/report` (summary by employee ID)
+- Routes: `/` (Landing), `/timesheet` (enter weekly hours), `/report` (summary by employee ID), `/employees` (manage employees CRUD)
 - API client base URL: `/codex-example/api/v1`
 - Uses MUI theme with `ThemeProvider` and `CssBaseline`.
+
+Employees Management
+- Navigate to `/employees` or use the top nav link.
+- Create, edit, and delete employees using the dialog and actions.
+- Data persisted via API endpoints under `/employees`.
 
 Development Conventions
 - Backend: Controller -> Service -> Repository, DTOs only, Bean Validation, Lombok.
@@ -61,4 +66,3 @@ GitHub Workflow
 - Use issues prefixed with `wiggens:`. Implement one issue per commit.
 - Conventional commits: `feat:`, `fix:`, `chore:`, `test:`.
 - Push to origin using configured PAT in `GITHUB_TOKEN` when closing issues.
-

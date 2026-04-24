@@ -14,6 +14,8 @@ export default function App() {
           <MuiLink component={Link} color="inherit" underline="none" to="/timesheet">Timesheet</MuiLink>
           <Box sx={{ mx: 2 }} />
           <MuiLink component={Link} color="inherit" underline="none" to="/report">Report</MuiLink>
+          <Box sx={{ mx: 2 }} />
+          <MuiLink component={Link} color="inherit" underline="none" to="/employees">Employees</MuiLink>
         </Toolbar>
       </AppBar>
       <Container sx={{ mt: 3 }}>
