@@ -1,0 +1,13 @@
+package com.ralph.timesheet;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class RalphTimesheetApiApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(RalphTimesheetApiApplication.class, args);
+	}
+
+}
