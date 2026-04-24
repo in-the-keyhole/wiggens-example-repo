@@ -23,6 +23,7 @@ Key endpoints
 - `POST /timesheets` upsert a weekly timesheet
 - `GET /timesheets/{employeeId}?weekStart=YYYY-MM-DD` get a weekly timesheet
 - `GET /reports/summary?from=YYYY-MM-DD&to=YYYY-MM-DD` summary of hours per employee
+- `GET /dashboard` dashboard metrics: `{ employeesCount, totalHoursThisWeek, totalHoursAllTime }`
 
 ## Frontend (ui/)
 - Install: `cd ui && npm install`
@@ -31,6 +32,21 @@ Key endpoints
 - Build: `cd ui && npm run build`
 
 The frontend expects the backend at `VITE_API_BASE_URL` (default `http://localhost:8080/codex-example/api/v1`).
+
+UI overview
+- Landing page is a Dashboard showing:
+  - Employees count
+  - Total hours for the current week
+  - Total hours across all time
+- Quick actions:
+  - Browse Employees (view list and open a timesheet)
+  - Select an employee to create/open a timesheet for the current week
+
+Routes
+- `/` Dashboard
+- `/employees` Employees list
+- `/timesheet/:employeeId` Create/Open weekly timesheet
+- `/report` Summary report by date range
 
 ## Development Conventions
 - Backend: layered Controller -> Service -> Repository, DTOs, Jakarta Validation, tests with Spring Boot Test, Lombok.
