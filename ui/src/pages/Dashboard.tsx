@@ -9,6 +9,7 @@ export default function Dashboard() {
 
   return (
     <>
+      <Typography variant="h5" sx={{ mb: 2 }}>Welcome to the Dashboard</Typography>
       <Grid container spacing={2} sx={{ mb: 2 }}>
         <Grid item xs={12} md={4}>
           <StatCard title="Employees" value={stats?.employeeCount ?? 0} />
