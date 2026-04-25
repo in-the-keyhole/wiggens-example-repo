@@ -24,7 +24,8 @@ export type Employee = {
 
 export async function listEmployees(): Promise<Employee[]> {
   const res = await api.get('/employees')
-  return res.data
+  // Ensure we always return an array to avoid UI runtime errors
+  return Array.isArray(res.data) ? res.data : []
 }
 
 export async function createEmployee(e: Employee): Promise<Employee> {
@@ -53,4 +54,3 @@ export async function listTimesheetsByEmployee(employeeId: number): Promise<Time
   const res = await api.get(`/timesheets/employee/${employeeId}`)
   return res.data
 }
-
