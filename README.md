@@ -14,10 +14,11 @@ ui/   # React frontend (port 5173)
 ```
 
 ## Backend
-- Run: `cd api && ./mvnw spring-boot:run`
-- Test: `cd api && ./mvnw test`
-- Build: `cd api && ./mvnw clean package`
+- Run: `cd api && mvn spring-boot:run`
+- Test: `cd api && mvn test`
+- Build: `cd api && mvn clean package`
 - Base URL: `http://localhost:8080/codex-example/api/v1`
+- Seeds example employee on startup: `John Doe <john.doe@example.com>`
 
 ## Frontend
 - Install: `cd ui && npm install`
@@ -29,6 +30,9 @@ ui/   # React frontend (port 5173)
 - Use conventional commits: `feat:`, `fix:`, `chore:`, `test:`, `docs:`
 - Push: `git push origin main`
 - Issues with prefix `wiggens:` drive iterations; close via commit messages (e.g., `closes #11`).
+
+## Frontend Dev Proxy
+- During `npm run dev`, API calls to `/codex-example/api` are proxied to `http://localhost:8080`.
 
 ## Notes
 - REST endpoints under `codex-example/api/v1/`
