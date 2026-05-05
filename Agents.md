@@ -25,10 +25,13 @@ git commit
 git push
 
 ### Backend (api/)
+
+Use mvn not .mvnw when running Maven commands 
+
 ```bash
-cd api && ./mvnw spring-boot:run        # Run the API (port 8080)
-cd api && ./mvnw test                    # Run backend tests
-cd api && ./mvnw clean package           # Build JAR
+cd api && mvn spring-boot:run        # Run the API (port 8080)
+cd api && mvn test                    # Run backend tests
+cd api && mvn clean package           # Build JAR
 ```
 
 ### Frontend (ui/)
